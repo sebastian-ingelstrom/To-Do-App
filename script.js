@@ -17,6 +17,7 @@ function updateActiveTasks() {
         });
     }
     activeTasks.innerHTML = activeCount;
+    localStorage.setItem("activeCount", activeCount);
 }
 
 function addTask(){
@@ -62,36 +63,53 @@ function showTask(){
     listContainer.innerHTML = '';
     if(tasks){
         tasks.forEach(task => {
-            if(filter === '' || (filter === 'completed' && task.checked) || (filter === 'pending' && !task.checked)){
-                let li = document.createElement("li");
-                if(task.checked){
-                    li.classList.add("checked");
-                }
-                li.innerHTML = task.text;
-                listContainer.appendChild(li);
-                let span = document.createElement("span");
-                span.innerHTML = "\u00d7";
-                li.appendChild(span);
+            let li = document.createElement("li");
+            li.innerHTML = task.text;
+            if(task.checked){
+                li.classList.add("checked");
+            }
+            listContainer.appendChild(li);
+            let span = document.createElement("span");
+            span.innerHTML = "\u00d7";
+            li.appendChild(span);
+            let activeCount = localStorage.getItem("activeCount");  
+            if(activeCount !== null){
+                activeTasks.innerHTML = activeCount;
             }
         });
     }
+   
+    for(let i = 0; i < listContainer.children.length; i++){
+        let li = listContainer.children[i];
+        if(filter === 'completed' && !li.classList.contains("checked")){
+            li.style.display = "none";
+        }
+        else if(filter === 'pending' && li.classList.contains("checked")){
+            li.style.display = "none";
+        }
+        else{
+            li.style.display = "";
+        }
+    }
 }
+
 
 showTask();
 
 filters.forEach(function (el) {
     el.addEventListener("click", (e) => {
-      if (el.classList.contains('active')) {
-        el.classList.remove('active');
-        filter = '';
-      } else {
         filters.forEach(tag => tag.classList.remove('active'));
         el.classList.add('active');
-        filter = e.target.dataset.filter;
-      }
-      showTask();
+        filter = el.dataset.filter;
+        console.log(filter);
+        showTask();
     });
 });
+
+
+
+
+
 
 deleteAllButton.addEventListener("click", () => {
     localStorage.clear();
