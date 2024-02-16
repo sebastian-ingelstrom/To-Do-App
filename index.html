@@ -10,16 +10,26 @@
     <div class="container">
         <div class="todo-app">
             <h2>To-Do List <img src="images/icon.png"></h2>
+            <h4><div id="active-tasks">0</div>&nbsp;Active Tasks</h4>
+
+
             <div class="row">
                 <input type="text" id="input-box" placeholder="Add your text">
                 <button onclick="addTask()">Add</button>
             </div>
+            <div class="filters">
+                <div class="filter" data-filter="completed"><h4><img src="images/complete.png"> Complete</h4></div>
+                <div class="filter" data-filter="pending"><h4><img src="images/incomplete.png"> Incomplete</h4></div>
+                <div id="delete-all" class="delete-all"><h4>Delete All</h4></div>
+
+              </div>
             <ul id="list-container">
                 <!-- <li class="checked">Task 1</li>
                 <li>Task 2</li>
                 <li>Task 3</li> -->
             </ul>
         </div>
+        
     </div>
     <script src="script.js"></script>
 </body>

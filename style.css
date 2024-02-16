@@ -96,3 +96,53 @@ ul li span{
 ul li span:hover{
     background: #edeef0;
 }
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  
+  .filter {
+    color: #eee;
+    background: #5188CC;
+    padding: 5px 15px;
+    border-radius: 100px;
+    border: none
+  }
+
+  .filter img{
+    width: 30px;
+    margin-left: 10px;
+  }
+  
+  .filter h4 {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    margin: 5px;
+  }
+  
+  .filter.active, .filter:hover {
+    background-color: #90ABCC;
+  }
+  
+  .delete-all {
+    display: flex;
+    color: #00487C;
+    padding: 7px 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .delete-all:hover {
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #90ABCC;
+  }
+  h4{
+    color: #00487C;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
