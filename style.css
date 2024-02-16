@@ -192,5 +192,6 @@ ul li span:hover{
     }
     .delete-all {
         padding: 3.5px 7.5px;
+        margin-top: 20px;
     }
 }
