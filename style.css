@@ -182,7 +182,8 @@ ul li span:hover{
         line-height: 20px;
     }
     .filter {
-        padding: 16px 20px;
+        padding: 3.5px 7.5px;
+        margin-top: 20px;
     }
     .filter img{
         width: 15px;
