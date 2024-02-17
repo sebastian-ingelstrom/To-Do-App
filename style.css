@@ -106,7 +106,7 @@ ul li span:hover{
   .filter {
     color: #eee;
     background: #5188CC;
-    padding: 5px 15px;
+    padding: 16px 20px;
     border-radius: 100px;
     border: none;
     cursor: pointer;
@@ -182,7 +182,7 @@ ul li span:hover{
         line-height: 20px;
     }
     .filter {
-        padding: 2.5px 7.5px;
+        padding: 16px 20px;
     }
     .filter img{
         width: 15px;
@@ -195,3 +195,4 @@ ul li span:hover{
         margin-top: 20px;
     }
 }
+
